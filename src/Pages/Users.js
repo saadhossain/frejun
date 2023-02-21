@@ -41,9 +41,9 @@ const Users = () => {
     if (loading) {
         return <Loader />
     }
-    console.log(usersData);
     return (
         <div className='w-11/12 md:w-10/12 mx-auto py-5'>
+            {/* Conditionally Render data based on user authorization status */}
             {
                 user?.email === 'admin@frejun.com' ?
                     <>
@@ -64,26 +64,30 @@ const Users = () => {
                                 </select>
                             </div>
                         </div>
-                        {/* Tables to Show users Data */}
-                        <div className="flex justify-center my-5 text-gray-800">
-                            <div className="overflow-x-auto md:h-[390px]">
-                                <table className="w-11/12 md:w-[800px] text-xs">
-                                    <thead className="bg-gray-200 sticky top-0">
-                                        <tr className="text-left">
-                                            <th className="px-2 md:px-3 py-2 md:py-3">Name</th>
-                                            <th className="px-2 md:px-3 py-2 md:py-3">Image</th>
-                                            <th className="px-2 md:px-3 py-2 md:py-3">Email Address</th>
-                                            <th className="px-2 md:px-3 py-2 md:py-3">Age</th>
-                                            <th className="px-2 md:px-3 py-2 md:py-3">Gender</th>
-                                        </tr>
-                                    </thead>
-
-                                    {
-                                        filteredUsersData?.map(user => <DisplayUsersDetails user={user} key={user.id} />)
-                                    }
-                                </table>
-                            </div>
-                        </div>
+                        {/* Conditionally Render data based on search and filter */}
+                        {
+                            filteredUsersData.length === 0 ? <h2 className='text-xl md:text-2xl font-semibold text-secondary font-Shantell mt-5 text-center'>Sorry! No Match Found!!</h2> :
+                                // Tables to Show users Data
+                                <div className="flex justify-center my-5 text-gray-800">
+                                    <div className="overflow-x-auto md:h-[390px]">
+                                        <table className="w-11/12 md:w-[800px] text-xs">
+                                            <thead className="bg-gray-200 sticky top-0">
+                                                <tr className="text-left">
+                                                    <th className="px-2 md:px-3 py-2 md:py-3">Name</th>
+                                                    <th className="px-2 md:px-3 py-2 md:py-3">Image</th>
+                                                    <th className="px-2 md:px-3 py-2 md:py-3">Email Address</th>
+                                                    <th className="px-2 md:px-3 py-2 md:py-3">Age</th>
+                                                    <th className="px-2 md:px-3 py-2 md:py-3">Gender</th>
+                                                </tr>
+                                            </thead>
+                                            {/* Print Every Single User by mapping the array */}
+                                            {
+                                                filteredUsersData?.map(user => <DisplayUsersDetails user={user} key={user.id} />)
+                                            }
+                                        </table>
+                                    </div>
+                                </div>
+                        }
                     </>
                     : <div className='flex flex-col  items-center'>
                         <h2 className='text-3xl md:text-4xl font-semibold text-secondary font-Shantell mt-5 text-center'>Ohh... Sorry! You are not authorized!!</h2>
