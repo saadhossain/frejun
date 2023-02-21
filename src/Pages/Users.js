@@ -26,7 +26,7 @@ const Users = () => {
                     <>
                         <h2 className='text-3xl md:text-4xl font-semibold text-secondary font-Shantell text-center'>Users Details</h2>
                         {/* Tables to Show users Data */}
-                        <div className="flex justify-center mt-5 text-gray-800">
+                        <div className="flex justify-center my-5 text-gray-800">
                             <div className="overflow-x-auto md:h-[390px]">
                                 <table className="w-11/12 md:w-[800px] text-xs">
                                     <thead className="bg-gray-200 sticky top-0">
