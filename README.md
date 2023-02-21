@@ -1,6 +1,6 @@
 # Getting Started FreJun
 
-##### This app can be access here [FreJun](https://frejun-portal.netlify.app/).
+### This app can be access here [FreJun](https://frejun-portal.netlify.app/).
 
 ## Login Credientials
 
