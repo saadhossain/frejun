@@ -66,7 +66,7 @@ const Users = () => {
                         </div>
                         {/* Conditionally Render data based on search and filter */}
                         {
-                            filteredUsersData.length === 0 ? <h2 className='text-xl md:text-2xl font-semibold text-secondary font-Shantell mt-5 text-center'>Sorry! No Match Found!!</h2> :
+                            filteredUsersData?.length === 0 ? <h2 className='text-xl md:text-2xl font-semibold text-secondary font-Shantell mt-5 text-center'>Sorry! No Match Found!!</h2> :
                                 // Tables to Show users Data
                                 <div className="flex justify-center my-5 text-gray-800">
                                     <div className="overflow-x-auto md:h-[390px]">
